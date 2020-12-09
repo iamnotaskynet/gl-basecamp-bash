@@ -13,11 +13,13 @@ function show_version() {
 
 function show_help() {
     echo -e "Basic keys for calculator:";
-    echo -e "\t-h,--help,help:";
+    echo -e "\t--help,help:";
     echo -e "\t\t Showing this help.";
-    echo -e "\t-v,--version,version:";
+    echo -e "\t--version,version:";
     echo -e "\t\t Version of this calculator.";
-    echo -e "Examples (how to use):"
+    echo -e "Examples (how to use):";
+    echo -e "\t\t bash calculator.sh \"2+3\"";
+    echo -e "\t\t bash calculator.sh \"4.5*6.78\"";
 };
 
 function show_debug() {

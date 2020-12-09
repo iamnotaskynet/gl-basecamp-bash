@@ -9,7 +9,7 @@ elif [[  -n $1 && -n $2 ]]; then show_error "Only one argument allowed";    exit
 elif [[  -n $1 && -z $2 ]]; then 
     #Check the incoming parameter
     result_check=$(check_arg $1);
-    show_debug "RESULT_CHECK:$result_check";
+    show_debug "$result_check";
     if [[ "$result_check" != "0" ]]; then 
         show_error "Arguments NOT ok!";
         exit 128;
