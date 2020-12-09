@@ -55,14 +55,14 @@ function calc() {
         scale=$scale1;
     elif    [[ $scale1 -gt $scale2 ]]; then 
         difference=$(($scale1-$scale2));
-        echo "diff $difference";
+        # echo "diff $difference";
         mult=1;
         for ((i = 1 ; i <= $difference ; i++)); do mult=$mult*10; done;
         num2=$(($num2*$mult));
         scale=$scale1;
     elif    [[ $scale1 -lt $scale2 ]]; then 
         difference=$(($scale2-$scale1));
-        echo "diff $difference";
+        # echo "diff $difference";
         mult=1;
         for ((i = 1 ; i <= $difference ; i++)); do mult=$mult*10; done;
         num1=$(($num1*$mult));
@@ -76,8 +76,8 @@ function calc() {
     fi;
     # calculating MULTIPLYER for *
     if [[ $operation == "*" ]]; then
-        echo "scale1 $scale1 scale2 $scale2";
-        echo "num1: $num1; num2: $num2";
+        # echo "scale1 $scale1 scale2 $scale2";
+        # echo "num1: $num1; num2: $num2";
         range=$scale+$scale
         multiplyer=1;
         for ((i = 1 ; i <= $range  ; i++)); do multiplyer=$(($multiplyer*10)); done;
