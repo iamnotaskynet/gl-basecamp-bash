@@ -50,16 +50,22 @@ function calc() {
     local multiplyer=1;
     local scale=1;
     local difference=1;
-
+    
     if      [[ $scale1 -eq $scale2 ]]; then 
         scale=$scale1;
     elif    [[ $scale1 -gt $scale2 ]]; then 
         difference=$(($scale1-$scale2));
-        num2=$(($num2*10*$difference));
+        echo "diff $difference";
+        mult=1;
+        for ((i = 1 ; i <= $difference ; i++)); do mult=$mult*10; done;
+        num2=$(($num2*$mult));
         scale=$scale1;
     elif    [[ $scale1 -lt $scale2 ]]; then 
         difference=$(($scale2-$scale1));
-        num1=$(($num1*10*$difference));
+        echo "diff $difference";
+        mult=1;
+        for ((i = 1 ; i <= $difference ; i++)); do mult=$mult*10; done;
+        num1=$(($num1*$mult));
         scale=$scale2;
     fi;
 
@@ -70,8 +76,11 @@ function calc() {
     fi;
     # calculating MULTIPLYER for *
     if [[ $operation == "*" ]]; then
-        multiplyer=10;
-        for ((i = 1 ; i <= $scale+$difference ; i++)); do multiplyer=$((multiplyer*10)); done;
+        echo "scale1 $scale1 scale2 $scale2";
+        echo "num1: $num1; num2: $num2";
+        range=$scale+$scale
+        multiplyer=1;
+        for ((i = 1 ; i <= $range  ; i++)); do multiplyer=$(($multiplyer*10)); done;
         result=$(printf %.$scale\f "$((10**3 * ($num1$operation$num2)/$multiplyer ))e-3");
     fi;
     # calculating  SCALING NUMS for /
