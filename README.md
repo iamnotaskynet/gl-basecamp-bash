@@ -1,11 +1,12 @@
 # gl-basecamp-bash
 
 ### base usage
-
+```
 bash calculator.sh 2.5+5.7
 bash calculator.sh "31.4/5.0101"
 bash calculator.sh help
 bash calculator.sh version
+```
 
 ### TASK
 - Написать калькулятор скрипт calculator.sh который будет работать как с целочисленными значениями так и значениями с плавающей точкой.
